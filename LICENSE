@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2024 PocketTone Archive Pro
+Copyright (c) 2025 PocketTone Archive Pro contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,13 +22,13 @@ SOFTWARE.
 
 ---
 
-ADDITIONAL NOTICE
+FICTIONAL PRODUCT NOTICE
 
-PocketTone Archive Pro is an unofficial, original web instrument inspired by
-the general look and feel of vintage pocket keyboards. It is not affiliated
-with, endorsed by, or sponsored by any keyboard manufacturer. All models,
-names, skins, demos and lesson data in this project are fictional or original.
-
-No copyrighted audio samples are used. All sounds are generated procedurally
-via the Web Audio API. All lesson melodies are either in the public domain or
-original compositions created for this project.
+All keyboard models, brand names, model histories, catalog quotes, and product
+imagery in this project ("PocketTone", "Pocket P-1", "Pocket P-10", "Pocket
+P-20", "Pocket P-50", "Pocket VL", "Pocket SA-Kid", and "PocketTone Archive
+Pro") are entirely fictional and were created for this project. Any resemblance
+to real products, brands, or trademarks is coincidental. This software does not
+include, sample, or reproduce any copyrighted audio, firmware, or assets from
+any real-world device; all sounds are synthesized in real time with the Web
+Audio API.

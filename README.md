@@ -1,194 +1,85 @@
-# 🎹 PocketTone Archive Pro
+# 🎹 PocketTone Archive Pro v3
 
-**A playable archive of imaginary vintage pocket keyboards**
+A browser-based **playable museum of six imaginary vintage pocket keyboards** (1981–1991). Pure HTML, CSS and JavaScript — **no frameworks, no build step, no external assets**. Every sound is synthesized live with the Web Audio API. Drop the three files on any static host (GitHub Pages included) and it just runs.
 
-> *Six fictional models. Eighteen voices. Fifteen rhythms. AudioContext-scheduled drums. One browser. Zero dependencies.*
-
----
-
-## What Is This?
-
-PocketTone Archive Pro is an original browser-based instrument and interactive museum inspired by the aesthetic of educational mini keyboards from the late 1970s and 1980s. It is **not** affiliated with any real manufacturer or product.
-
-Built with pure HTML, CSS, and JavaScript — no frameworks, no audio samples, no external dependencies. Every sound is synthesized in real time using the Web Audio API.
+> *"Calculate the melody. Synthesize the dream."* — Pocket VL catalog, 1982
 
 ---
 
-## Six Imaginary Models
+## ✨ What's new in v3
 
-Each model is a genuinely distinct instrument with unique casing, voices, rhythms, lesson songs, demo, and behavior. Changing model changes everything.
+v3 turns the archive into a reference-quality instrument suite. Everything from v2 is preserved; these are additions:
 
-| Model | Era | Keys | Polyphony | Memory | Character |
-|-------|-----|------|-----------|--------|-----------|
-| Pocket P-1 | 1981 | 29 | Mono | 100 notes | Classic learner, piano + flute |
-| Pocket P-10 | 1983 | 25 | Mono | 60 notes | Toy starter, square + music-box |
-| Pocket P-20 | 1985 | 32 | Mono | 150 notes | Intermediate, bells + strings |
-| Pocket P-50 | 1987 | 37 | Soft Poly (3v) | 300 notes | Advanced flagship, 8 unique voices |
-| Pocket VL | 1982 | 29 | Mono | 100 notes | Synth/calculator, lead + bass |
-| Pocket SA-Kid | 1991 | 32 | Mono | 120 notes | Arcade toy, kalimba + digital choir |
-
----
-
-## 18 Synthesized Voices
-
-All synthesized — no samples. Each has a unique oscillator blend, ADSR envelope, filter, and vibrato character:
-
-**Piano family:** Piano Toy, Piano Bright  
-**Winds:** Flute Air (with breathiness), Harmonica, Toy Horn  
-**Strings:** Violin Soft, Strings Ensemble  
-**Bells:** Fantasy Bell, Music Box, Kalimba  
-**Organ/Brass:** Organ Mini, Brass Toy, Clarinet Plastic, Pipe Organ  
-**Choir:** Digital Choir  
-**Synth:** Synth Lead, Synth Bass, Space Pad, Glitch Pulse  
-**Square:** Square Bee  
+- **Visual lesson song editor** — build your own lessons on a step grid, audition them, save, and play them back in Lesson mode under the *My Songs* tab.
+- **Step rhythm editor** — a 7-track step sequencer (kick / snare / hihat / clap / clave / tom / blip) with 8/12/16 steps and 2/4, 3/4, 4/4 signatures. Saved patterns become selectable rhythms.
+- **Full song mode** — custom songs flow straight into the lesson engine.
+- **Visual metronome** — a CSS pendulum plus an audible click locked to the beat scheduler.
+- **Improved quantized recording** — snap recorded notes to OFF / 1/16 / 1/8 / 1/4 grids.
+- **Arcade learning mode** — lives, combo multipliers, a timing window, per-song high scores and Stage Clear / Game Over states.
+- **Local achievements** — 12 unlockables tracked in `localStorage`, with a slide-in popup.
+- **Difficulty selector** — Easy / Normal / Hard adjusts lesson scoring and arcade lives + timing.
+- **Song import / export** — share custom songs as JSON.
+- **Editable sound presets** — tweak ADSR, filter and vibrato per voice and save custom presets.
+- **Redesigned museum panel** — richer cards with gradient headers, full specs, voice tags and catalog quotes.
+- **Better mobile responsive** — dedicated breakpoints at 680px and 400px.
+- **Per-model casing design** — each model carries its own colour strip and auto-skin.
+- **Fullscreen + performance mode** — a distraction-free, full-window performance keyboard.
 
 ---
 
-## 15 Rhythm Patterns
+## 🎛 The six models
 
-AudioContext-clock scheduled — zero drift. Synthesized percussion only (kick, snare, hi-hat, clave, clap, tom, blip):
+| Model | Year | Keys | Poly | Voices | Memory | Rarity |
+|-------|------|------|------|--------|--------|--------|
+| **Pocket P-1** | 1981 | 29 | mono | 4 | 100 | Common |
+| **Pocket P-10** | 1983 | 25 | mono | 4 | 60 | Common |
+| **Pocket P-20** | 1985 | 32 | mono | 6 | 150 | Uncommon |
+| **Pocket P-50** | 1987 | 37 | 3-voice | 8 | 300 | Rare — *the only chordable model* |
+| **Pocket VL** | 1982 | 29 | mono | 4 | 100 | Rare — *calculator-synth* |
+| **Pocket SA-Kid** | 1991 | 32 | mono | 6 | 120 | Uncommon |
 
-March · Waltz · 4 Beat · Rock 1 · Rock 2 · Swing · Bossa · Samba · Rumba · Disco Toy · Slow Ballad · Cha Cha · Beguine · Electro Click · Kids Pop
-
----
-
-## Lesson Mode — Follow the Lights
-
-Five learning modes:
-
-| Mode | How it works |
-|------|-------------|
-| **Watch** | App plays and lights keys automatically |
-| **Slow** | Watch mode at half tempo |
-| **Follow** | Light holds until you press the right key |
-| **Practice** | Lights guide you, errors don't block progress |
-| **Challenge** | Scored — every error is counted |
-
-**15 songs included** — all public domain or original compositions:
-Ode to Joy, Twinkle Twinkle, Frère Jacques, Mary Had a Little Lamb, London Bridge, Greensleeves, Sakura Sakura, Amazing Grace, Retro Lesson 01 & 02, Robot March, Tiny Waltz, Space Lullaby, Arcade Tune, plus 6 model-specific demo songs.
-
-Star ratings (1–3) saved per model per song in localStorage.
+All instruments, model histories and catalog quotes are **fictional** and created for this project.
 
 ---
 
-## Sequencer
+## 🚀 Running it
 
-- REC / PLAY / STOP / LOOP / CLEAR
-- 4 save slots: **click to SAVE**, **Shift+click to LOAD** (distinct, unambiguous)
-- Notes, timestamps, voice, and velocity recorded
-- Per-model memory limits (60–300 notes)
-- Export and import as JSON
-- Auto-saved to localStorage on every change
+Just open `index.html` — or serve the folder:
 
----
-
-## Computer Keyboard
-
-**Low row — C4 to B4 (white keys):**
-```
-Z  S  X  D  C  V  G  B  H  N  J  M
-C  C# D  D# E  F  F# G  G# A  A# B
+```bash
+python3 -m http.server 8000
+# then visit http://localhost:8000
 ```
 
-**High row — C5 to E6:**
-```
-Q  2  W  3  E  R  5  T  6  Y  7  U  I  9  O  0  P
-C  C# D  D# E  F  F# G  G# A  A# B  C  C# D  D# E
-```
-
-**Octave shift:** `[` / `]` keys, or the OCT▼ / OCT▲ buttons on screen (±3 octaves).  
-**Notes stop on window blur** — no stuck notes when switching tabs.
+For **GitHub Pages**: commit `index.html`, `style.css`, `app.js` to a repo and enable Pages on the branch root.
 
 ---
 
-## FX Controls
-
-| Control | Effect |
-|---------|--------|
-| MASTER | Overall volume |
-| SUSTAIN | Release time extension |
-| LO-FI | Frequency roll-off (warmth/grit) |
-| VIBRATO | Pitch modulation depth |
-| TUNE | Global pitch in cents (±50) |
-| ANALOG DRIFT | Random per-note pitch variation |
-| FILTER CUTOFF | Global low-pass cutoff scale |
-
----
-
-## Skins
-
-**7 manual skins:** Classic Cream (auto) · Dark Studio · Toy Red · Catalog 1983 · Worn Vintage · LCD Green · Midnight Blue
-
-Each model also applies its own automatic skin when "Auto" is selected.
-
----
-
-## Museum Mode
-
-Every model has a museum card: era, specs, description, rarity (COMMON / UNCOMMON / RARE), and an invented catalog quote. Click any card to switch to that model.
-
----
-
-## Publishing to GitHub Pages
-
-1. Create a new GitHub repository
-2. Upload: `index.html`, `style.css`, `app.js`
-3. Go to **Settings → Pages**
-4. Source: **Deploy from a branch**, branch `main`, folder `/ (root)`
-5. Save — live at `https://yourusername.github.io/repo-name`
-
-No build step. No npm. No config.
-
----
-
-## File Structure
+## ⌨️ Keyboard
 
 ```
-pockettone-archive-pro/
-├── index.html   — App shell and all markup
-├── style.css    — Design system, skins, responsive layout
-├── app.js       — All logic: audio, models, UI, sequencer, lessons
-├── README.md    — This file
-└── LICENSE      — MIT License
+Low octave  (C4–B4):  Z S X D C V G B H N J M
+High octave (C5–E6):  Q 2 W 3 E R 5 T 6 Y 7 U I 9 O 0 P
+Octave shift:         [  ]   (also  ,  . )
+Exit performance:     Esc
 ```
 
----
-
-## Technical Notes
-
-- **Rhythm engine** uses AudioContext lookahead scheduling (not `setTimeout`) — zero timing drift at any BPM
-- **AudioContext** is created once and resumed on first user gesture (browser policy compliant)
-- **Black key detection** uses chromatic semitone index, not string matching
-- **Stuck notes** prevented via `window.blur` listener and `releaseAll()` on model change
-- **Slot logic** is explicit: click = save, Shift+click = load — no ambiguous toggle
-- **color-mix()** avoided — compatible with Safari, Firefox, Chrome across all versions
+Click/tap the on-screen keys too. Click a memory slot to **save**, shift-click to **load**.
 
 ---
 
-## Roadmap
+## 🗂 Files
 
-- [ ] MIDI output via Web MIDI API  
-- [ ] Step sequencer grid view (16-step pattern editor)  
-- [ ] Additional lesson songs  
-- [ ] Fill button for rhythm engine  
-- [ ] Export sequence as MIDI file  
-- [ ] Chord mode for P-50 (auto-chord left hand)  
-- [ ] Velocity sensitivity via pointer pressure (Pointer Events API)  
+| File | Role |
+|------|------|
+| `index.html` | Markup: device shell, panels, all modals |
+| `style.css` | Tokens, skins, per-model casings, responsive, performance overlay |
+| `app.js` | 19 engines: audio, rhythm scheduler, sequencer, lessons, arcade, editors, presets, achievements, performance, UI, app controller |
 
----
-
-## Legal Notice
-
-**PocketTone Archive Pro is an unofficial, original web instrument inspired by the general look and feel of vintage pocket keyboards. It is not affiliated with, endorsed by, or sponsored by any keyboard manufacturer. All models, names, skins, demos and lesson data in this project are fictional or original.**
-
-All sounds are procedurally synthesized. No copyrighted audio samples are used. All lesson melodies are either in the public domain or original compositions created for this project. No trademarked names, logos, or designs are reproduced.
+Local data lives in three `localStorage` keys: `pockettone_v3`, `pockettone_v3_songs`, `pockettone_v3_patterns`.
 
 ---
 
-## License
+## 📄 License
 
-MIT — see `LICENSE` file.
-
----
-
-*Built with Web Audio API, pure CSS, and a sincere love for tiny plastic keyboards from decades that never quite existed.*
+MIT — see [LICENSE](LICENSE).
