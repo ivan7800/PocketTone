@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>PocketTone Archive Pro — Imaginary Vintage Keyboards</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+
+    <!-- TOP BAR -->
+    <header id="top-bar">
+      <div id="brand">
+        <span id="brand-logo">◈</span>
+        <span id="brand-name">PocketTone</span>
+        <span id="brand-sub">ARCHIVE PRO</span>
+      </div>
+      <div id="top-controls">
+        <div class="ctrl-group">
+          <label class="ctrl-label">MODEL</label>
+          <select id="model-select"></select>
+        </div>
+        <div class="ctrl-group">
+          <label class="ctrl-label">SKIN</label>
+          <select id="skin-select">
+            <option value="auto">Auto</option>
+            <option value="classic-cream">Classic Cream</option>
+            <option value="dark-studio">Dark Studio</option>
+            <option value="toy-red">Toy Red</option>
+            <option value="catalog-1983">Catalog 1983</option>
+            <option value="worn-vintage">Worn Vintage</option>
+            <option value="lcd-green">LCD Green</option>
+            <option value="midnight-blue">Midnight Blue</option>
+          </select>
+        </div>
+        <button id="btn-museum" class="top-btn">⊞ MUSEUM</button>
+        <button id="btn-help" class="top-btn">? HELP</button>
+      </div>
+    </header>
+
+    <!-- DEVICE BODY -->
+    <main id="device-body">
+
+      <!-- LCD -->
+      <section id="lcd-panel">
+        <div id="lcd-screen">
+          <div id="lcd-line1">
+            <span id="lcd-model">POCKET P-1</span>
+            <span id="lcd-mode-badge">STOP</span>
+          </div>
+          <div id="lcd-line2">
+            <span id="lcd-voice">PIANO TOY</span>
+            <span id="lcd-rhythm-name">MARCH</span>
+          </div>
+          <div id="lcd-line3">
+            <span id="lcd-bpm">♩120</span>
+            <span id="lcd-memory">MEM 0/100</span>
+            <span id="lcd-octave">OCT +0</span>
+          </div>
+          <div id="lcd-message">READY — PRESS A KEY</div>
+        </div>
+        <div id="beat-leds">
+          <div class="beat-led" id="beat-0"></div>
+          <div class="beat-led" id="beat-1"></div>
+          <div class="beat-led" id="beat-2"></div>
+          <div class="beat-led" id="beat-3"></div>
+        </div>
+      </section>
+
+      <!-- VOICE + RHYTHM + MODE PANEL -->
+      <section id="control-panel">
+        <div class="ctrl-section" id="voice-section">
+          <div class="section-label">VOICE</div>
+          <div id="voice-buttons" class="btn-grid"></div>
+        </div>
+        <div class="ctrl-section" id="rhythm-section">
+          <div class="section-label">RHYTHM</div>
+          <div id="rhythm-buttons" class="btn-grid"></div>
+        </div>
+        <div class="ctrl-section" id="mode-section">
+          <div class="section-label">MODE</div>
+          <div class="btn-grid">
+            <button class="mode-btn" id="btn-demo">▶ DEMO</button>
+            <button class="mode-btn" id="btn-lesson">♪ LESSON</button>
+            <button class="mode-btn" id="btn-museum-inline">⊞ INFO</button>
+            <button class="mode-btn" id="btn-settings">⚙ FX</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- KEYBOARD SECTION -->
+      <section id="keyboard-section">
+        <div id="lesson-lights-row"></div>
+        <div id="keyboard-scroll-wrap">
+          <div id="keyboard-container"></div>
+        </div>
+        <div id="keyboard-footer">
+          <div id="octave-controls">
+            <button class="oct-btn" id="btn-oct-down">OCT ▼</button>
+            <span id="oct-display">+0</span>
+            <button class="oct-btn" id="btn-oct-up">OCT ▲</button>
+          </div>
+          <div id="keyboard-hint">[ Z–M = white keys C4–B4 · Q–P = white keys C5–E6 ]</div>
+        </div>
+      </section>
+
+      <!-- RHYTHM + TEMPO BAR -->
+      <section id="rhythm-bar">
+        <div class="rbar-group">
+          <button class="transport-btn rhythm-play-btn" id="btn-rhythm-play">▶ BEAT</button>
+          <button class="transport-btn" id="btn-tap">TAP</button>
+        </div>
+        <div class="rbar-group" id="tempo-group">
+          <label class="ctrl-label">BPM</label>
+          <input type="range" id="tempo-slider" min="40" max="240" value="120">
+          <span id="tempo-display">120</span>
+        </div>
+        <div class="rbar-group">
+          <label class="ctrl-label">MASTER</label>
+          <input type="range" id="master-vol" min="0" max="100" value="80">
+          <label class="ctrl-label">SUSTAIN</label>
+          <input type="range" id="sustain-ctrl" min="0" max="100" value="30">
+        </div>
+        <div class="rbar-group">
+          <label class="ctrl-label">LO-FI</label>
+          <input type="range" id="lofi-ctrl" min="0" max="100" value="40">
+          <label class="ctrl-label">VIBRATO</label>
+          <input type="range" id="vibrato-ctrl" min="0" max="100" value="20">
+        </div>
+      </section>
+
+      <!-- SEQUENCER BAR -->
+      <section id="seq-bar">
+        <div class="seq-group">
+          <div class="section-label">SEQUENCER</div>
+          <div class="seq-btns">
+            <button class="transport-btn rec-btn" id="btn-rec">⏺ REC</button>
+            <button class="transport-btn play-btn" id="btn-play">▶ PLAY</button>
+            <button class="transport-btn" id="btn-stop">■ STOP</button>
+            <button class="transport-btn" id="btn-clear">✕ CLR</button>
+            <button class="transport-btn loop-btn" id="btn-loop">↺ LOOP</button>
+          </div>
+          <div id="seq-counter">0 / 100 notes</div>
+        </div>
+        <div class="seq-group">
+          <div class="section-label">SLOTS — click to SAVE · shift-click to LOAD</div>
+          <div class="seq-btns" id="slot-buttons">
+            <button class="slot-btn active-slot" data-slot="0">SL1 —</button>
+            <button class="slot-btn" data-slot="1">SL2 —</button>
+            <button class="slot-btn" data-slot="2">SL3 —</button>
+            <button class="slot-btn" data-slot="3">SL4 —</button>
+          </div>
+          <div class="seq-btns" style="margin-top:4px">
+            <button class="transport-btn" id="btn-export">⬇ EXPORT JSON</button>
+            <button class="transport-btn" id="btn-import">⬆ IMPORT JSON</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== MODALS ===== -->
+
+    <!-- LESSON MODAL -->
+    <div id="modal-lesson" class="modal hidden">
+      <div class="modal-box">
+        <div class="modal-header">
+          <span class="modal-title">♪ LESSON MODE</span>
+          <button class="modal-close" data-target="modal-lesson">✕</button>
+        </div>
+        <div class="modal-body">
+          <div id="lesson-song-list"></div>
+          <div id="lesson-mode-row">
+            <button class="lmode-btn active" data-mode="watch">WATCH</button>
+            <button class="lmode-btn" data-mode="follow">FOLLOW</button>
+            <button class="lmode-btn" data-mode="practice">PRACTICE</button>
+            <button class="lmode-btn" data-mode="challenge">CHALLENGE</button>
+            <button class="lmode-btn" data-mode="slow">SLOW</button>
+          </div>
+          <div id="lesson-mode-desc">WATCH: app plays song and lights the keys. Watch and listen.</div>
+          <div class="lesson-action-row">
+            <button id="btn-lesson-start" class="big-btn">▶ START</button>
+            <button id="btn-lesson-cancel" class="big-btn danger">■ STOP LESSON</button>
+          </div>
+          <div id="lesson-result" class="hidden">
+            <div id="lesson-stars-display"></div>
+            <div id="lesson-result-details"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MUSEUM MODAL -->
+    <div id="modal-museum" class="modal hidden">
+      <div class="modal-box wide">
+        <div class="modal-header">
+          <span class="modal-title">⊞ MUSEUM — IMAGINARY VINTAGE KEYBOARDS</span>
+          <button class="modal-close" data-target="modal-museum">✕</button>
+        </div>
+        <div class="modal-body" id="museum-content"></div>
+      </div>
+    </div>
+
+    <!-- FX / SETTINGS MODAL -->
+    <div id="modal-settings" class="modal hidden">
+      <div class="modal-box">
+        <div class="modal-header">
+          <span class="modal-title">⚙ SETTINGS &amp; FX</span>
+          <button class="modal-close" data-target="modal-settings">✕</button>
+        </div>
+        <div class="modal-body">
+          <div class="setting-row">
+            <label>Polyphony</label>
+            <select id="poly-select"><option value="1">Mono</option><option value="3">Soft Poly (3v)</option></select>
+          </div>
+          <div class="setting-row">
+            <label>Tune (cents)</label>
+            <input type="range" id="tune-ctrl" min="-50" max="50" value="0">
+            <span id="tune-display">0¢</span>
+          </div>
+          <div class="setting-row">
+            <label>Analog Drift</label>
+            <input type="range" id="drift-ctrl" min="0" max="100" value="20">
+            <span id="drift-display">20</span>
+          </div>
+          <div class="setting-row">
+            <label>Filter Cutoff</label>
+            <input type="range" id="filter-ctrl" min="0" max="100" value="70">
+            <span id="filter-display">70</span>
+          </div>
+          <hr style="border-color:var(--btn-border);margin:12px 0">
+          <button id="btn-reset" class="big-btn danger">⚠ RESET ALL DATA</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- HELP MODAL -->
+    <div id="modal-help" class="modal hidden">
+      <div class="modal-box">
+        <div class="modal-header">
+          <span class="modal-title">? KEYBOARD &amp; GUIDE</span>
+          <button class="modal-close" data-target="modal-help">✕</button>
+        </div>
+        <div class="modal-body" id="help-content">
+          <h3>Computer Keyboard</h3>
+          <div id="keymap-visual"></div>
+          <h3>Controls</h3>
+          <ul>
+            <li><b>Play:</b> Click / tap keys, or use keyboard shortcuts above.</li>
+            <li><b>Octave shift:</b> OCT▼ / OCT▲ buttons (or keyboard [ / ] ).</li>
+            <li><b>Voice:</b> Select sound in the VOICE panel.</li>
+            <li><b>Rhythm:</b> Select pattern, press ▶ BEAT to start/stop.</li>
+            <li><b>TAP:</b> Tap BPM in real time.</li>
+            <li><b>REC:</b> Record notes. PLAY to replay. LOOP to loop it.</li>
+            <li><b>Slots:</b> Click SL1–SL4 to SAVE. Shift+click to LOAD.</li>
+            <li><b>LESSON:</b> Pick a song, pick a mode, press START. Lights guide you.</li>
+            <li><b>DEMO:</b> Each model has a unique signature demo. Press again to stop.</li>
+            <li><b>MUSEUM:</b> Background, specs, and catalog quotes for each model.</li>
+          </ul>
+          <h3>Lesson Modes</h3>
+          <ul>
+            <li><b>Watch:</b> App plays and lights keys. Just listen.</li>
+            <li><b>Slow:</b> Watch mode at half speed.</li>
+            <li><b>Follow:</b> Light stays until you play the right key.</li>
+            <li><b>Practice:</b> Lights guide you, errors don't stop you.</li>
+            <li><b>Challenge:</b> Scored. Every error counted.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOAST -->
+    <div id="toast" class="hidden"></div>
+
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
